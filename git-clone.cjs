@@ -56,6 +56,7 @@ for (var i=0; i < process.argv; i++) {
 run('git',['clone',base + 'adligo/cli.ts.adligo.org.git']);
 run('git',['clone',base + 'adligo/fab.ts.adligo.org.git']);
 run('git',['clone',base + 'adligo/fab_core.ts.adligo.org.git']);
+run('git',['clone',base + 'adligo/fab_dts_poc.ts.adligo.org.git']);
 run('git',['clone',base + 'adligo/fab_group.ts.adligo.org.git']);
 run('git',['clone',base + 'adligo/junitXml.tests4j.ts.adligo.org.git']);
 run('git',['clone',base + 'adligo/i_io.ts.adligo.org.git']);

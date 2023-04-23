@@ -28,9 +28,10 @@ replay_pid*
 /node_modules/
 
 #sub projects
-/cli.ts.adligo.org.git
+/cli.ts.adligo.ortg
 /fab.ts.adligo.org
 /fab_core.ts.adligo.org
+/fab_dts_poc.ts.adligo.org
 /fab_group.ts.adligo.org
 /junitXml.tests4j.ts.adligo.org
 /i_io.ts.adligo.org
