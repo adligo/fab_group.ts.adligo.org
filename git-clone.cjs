@@ -1,3 +1,4 @@
+const [run1, run2, run3] = require('./buildSrc/runFuns.cjs');
 /**
   * Copyright 2023 Adligo Inc / Scott Morgan
   *
@@ -13,38 +14,6 @@
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
-const { spawnSync } = require('child_process');
-const IS_WIN = process.platform === "win32";
-var npm = 'npm'
-if (IS_WIN) {
-  npm = 'npm.cmd'
-}
-
-function out(cmd, spawnSyncReturns) {
-  console.log('ran ' + cmd );
-  console.log('\tand the spawnSyncReturns had;');
-  if (spawnSyncReturns.error != undefined) {
-    console.log('\tError: ' + spawnSyncReturns.error);
-    console.log('\t\t' + spawnSyncReturns.error.message);
-  }  
-  if (spawnSyncReturns.stderr != undefined) {
-    console.log('\tStderr: ' + spawnSyncReturns.stderr);
-  }
-  if (spawnSyncReturns.stdout != undefined) {
-    console.log('\tStdout: ' + spawnSyncReturns.stdout);
-  }
-}
-
-function run(cmd, args) {
-  var cc = cmd;
-  if (args != undefined) {
-    for (var i=0; i < args.length; i++) {
-      cc = cc + ' ' + args[i];
-    }
-  }
-  out(cc, spawnSync(cmd, args));
-}
-
 var base =  'https://github.com/';
 for (var i=0; i < process.argv; i++) {
   let arg = argv[i];
@@ -53,14 +22,14 @@ for (var i=0; i < process.argv; i++) {
   }
 }
 
-run('git',['clone',base + 'adligo/cli.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/fab.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/fab_core.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/fab_dts_poc.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/log2.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/log2_tests.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/junitXml.tests4j.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/i_log2.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/i_io.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/i_fab.ts.adligo.org.git']);
-run('git',['clone',base + 'adligo/tests4j.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/cli.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/fab.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/fab_core.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/fab_dts_poc.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/log2.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/log2_tests.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/junitXml.tests4j.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/i_log2.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/i_io.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/i_fab.ts.adligo.org.git']);
+run2('git',['clone',base + 'adligo/tests4j.ts.adligo.org.git']);

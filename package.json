@@ -33,7 +33,8 @@
   "scripts": {
     "git-clone": "node git-clone.cjs",
     "git-clone-ssh": "node git-clone.cjs --ssh",
-    "rm-all": "rm -fr *.ts.adligo.org",
+	"setup": "node buildSrc/setup.cjs",
+	"rm-all": "rm -fr *.ts.adligo.org",
     "tsc": "tsc"
   },
   "type": "module",
