@@ -15,8 +15,14 @@ const [run1, run2, run3] = require('./buildSrc/runFuns.cjs');
   * limitations under the License.
   */
 var base =  'https://github.com/';
-for (var i=0; i < process.argv; i++) {
-  let arg = argv[i];
+var args = []
+if (process.argv != undefined) {
+	args = process.argv;
+}
+console.log('Base is ' + base + ' checking cli arguments; \n' + args);
+for (var i=0; i < args.length; i++) {
+  let arg = args[i];
+  console.log('With argument ' + arg);
   if (arg == '--ssh') {
     base = 'git@github.com:'
   }

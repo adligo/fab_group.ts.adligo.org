@@ -21,7 +21,11 @@ if (IS_WIN) {
 }
 
 function out(cmd, spawnSyncReturns, options) {
-  console.log('ran: ' + cmd + ' in ' + options.cwd );
+  var dir = options.cwd;
+  if (dir == undefined) {
+	dir = '.';
+  }
+  console.log('ran: ' + cmd + ' in ' + dir);
   console.log('\tand the spawnSyncReturns had;');
   if (spawnSyncReturns.error != undefined) {
 	Error.captureStackTrace(spawnSyncReturns.error);
