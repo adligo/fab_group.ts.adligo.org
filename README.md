@@ -13,8 +13,10 @@ npm install -g @ts.adligo.org/slink
 npm run git-clone
 ```
 
-## To work on  this project run 
+## To work on  this project run the following commands
 ```
 npm run git-clone-ssh
+npm run setup
+npm run build
 
 ```
