@@ -40,4 +40,5 @@ npm -v
 
 curl --location --show-error -O --url "https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz"
 
+npm install -g @ts.adligo.org/slink
 ```

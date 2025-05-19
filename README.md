@@ -16,7 +16,17 @@ npm run git-clone
 ## To work on  this project run the following commands
 ```
 npm run git-clone-ssh
+
+```
+
+## Note on windows you want to use a GitBash prompt running as Administrator;
+```
 npm run setup
+
+```
+## As a NON-Administrator;
+
+```
 npm run build
 
 ```
