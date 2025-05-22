@@ -1,5 +1,5 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
-
+const [getOpts] = require('./setupFuns.cjs');
 /**
  * This must be run from the root (aka ..) directory.
  * 
@@ -19,4 +19,4 @@ const [run1, run2, run3] = require('./runFuns.cjs');
   * limitations under the License.
   */
 //run('pwd',[], { cwd: 'log2.ts.adligo.org'})
-run3('npx',['tsx','src/junitXmlApiTrial.ts'], { cwd: 'junitXml_tests.tests4j.ts.adligo.org'})
+run3('npx',['tsx','src/junitXmlApiTrial.ts'], getOpts('junitXml_tests.tests4j.ts.adligo.org'))
