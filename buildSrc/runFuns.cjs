@@ -26,6 +26,7 @@ function out(cmd, spawnSyncReturns, options) {
 	dir = '.';
   }
   console.log('ran: ' + cmd + ' in ' + dir);
+  console.log('with options: ' + options);
   console.log('\tand the spawnSyncReturns had;');
   if (spawnSyncReturns.error != undefined) {
 	Error.captureStackTrace(spawnSyncReturns.error);
