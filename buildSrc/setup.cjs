@@ -42,3 +42,5 @@ run3('slink',[], getOpts('tests4jXml_tests.ts.adligo.org'))
 
 // do all the npm i last
 run3('npm',['i'], getOpts('tests4ts.ts.adligo.org'))
+
+module.exports = [getOpts];
