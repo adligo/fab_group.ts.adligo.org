@@ -56,15 +56,22 @@ function runWith(cmd, args, options) {
     }
   }
   //Execute fork to GitBash from GitBash
-    if (options == undefined) {
+  if (options == undefined) {
 	options = new Object();
 
-	options.shell = process.env.SHELL
+	var sh = process.env.SHELL;
+	if (sh != undefined) {
+		options.shell = process.env.SHELL
+	}
 	console.log('New options, running with shell is ' + options.shell)
   } else {
-	options.shell = process.env.SHELL
+	var sh = process.env.SHELL;
+	if (sh != undefined) {
+		options.shell = process.env.SHELL
+	}
 	console.log('Running with shell is ' + options.shell)
   }
+  
   if (args == undefined) {
 	out(cc, spawnSync(cmd, [], options), options);
   } else {
