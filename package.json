@@ -34,8 +34,8 @@
     "git-clone": "node git-clone.cjs",
     "git-clone-ssh": "node git-clone.cjs --ssh",
 	"setup": "node buildSrc/setup.cjs",
-	"rm-all": "rm -fr *.ts.adligo.org",
-    "tsc": "tsc"
+	"test": "node buildSrc/test.cjs",
+	"tsc": "tsc"
   },
   "type": "module",
   "version": "1.0.7"
