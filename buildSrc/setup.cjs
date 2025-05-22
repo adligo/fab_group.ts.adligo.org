@@ -22,6 +22,7 @@ const [run1, run2, run3] = require('./runFuns.cjs');
 run3('slink',[], { cwd: 'log2.ts.adligo.org'})
 run3('slink',[], { cwd: 'log2_tests.ts.adligo.org'})
 run3('slink',[], { cwd: 'tests4ts.ts.adligo.org'})
+run3('npm',['i'], { cwd: 'tests4ts.ts.adligo.org'})
 run3('slink',[], { cwd: 'junitXml.tests4j.ts.adligo.org'})
 run3('slink',[], { cwd: 'junitXml_tests.tests4j.ts.adligo.org'})
 run3('slink',[], { cwd: 'tests4jXml.ts.adligo.org'})
