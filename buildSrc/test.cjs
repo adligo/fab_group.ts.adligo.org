@@ -1,5 +1,5 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
-const [getOpts] = require('./setupFuns.cjs');
+const [getOpts] = require('./setup.cjs');
 /**
  * This must be run from the root (aka ..) directory.
  * 
