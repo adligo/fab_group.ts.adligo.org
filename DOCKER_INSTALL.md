@@ -10,12 +10,15 @@ Also these commands might come in handy;
 On Windows in Git Bash;
 
 ```
+docker ps
 winpty docker exec -it -u root <containerId/> bash
+winpty docker exec -it -u root 5ca973c2d49b bash
 ```
 
 On Max Os or other Unix
 
 ```
+docker ps
 docker exec -it -u root <containerId/> bash
 ```
 
@@ -36,6 +39,10 @@ apt-get update
 nodejs -v
 apt install npm
 npm -v
+npm i -g npx
+npx --version
+npm i -g typescript
+npm install -g tsx
 
 
 curl --location --show-error -O --url "https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz"
