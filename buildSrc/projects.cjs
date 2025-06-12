@@ -35,15 +35,22 @@ class Project {
 
 }
 projects = [new Project('i_obj.ts.adligo.org', true), new Project('i_strings.ts.adligo.org', true), new Project('i_io.ts.adligo.org', true),
-new Project('i_tests4ts.ts.adligo.org', true),new Project('i_cli.ts.adligo.org', true),
-new Project('i_log2.ts.adligo.org', true),new Project('i_fab_core.ts.adligo.org', true),
+new Project('i_tests4ts.ts.adligo.org', true),new Project('i_log2.ts.adligo.org', true),
+new Project('i_cli.ts.adligo.org', true),new Project('i_fab_core.ts.adligo.org', true),
 // end of interface projects
-new Project('cli.ts.adligo.org', true),new Project('cli_tests.ts.adligo.org', true),
-new Project('log2.ts.adligo.org', true),new Project('log2_tests.ts.adligo.org', true),
+// TODO put code in the following projects that are turned off with comment lines like;
+// true, true), or true),
+new Project('cli.ts.adligo.org'), // true),
+new Project('cli_tests.ts.adligo.org'), // true),
+new Project('log2.ts.adligo.org', true),
+new Project('log2_tests.ts.adligo.org'),// true),
 new Project('tests4ts.ts.adligo.org', true), new Project('tests4ts_tests.ts.adligo.org'),
-new Project('junit-xml-tests4j.ts.adligo.org', true), new Project('junit-xml-tests4j_tests.ts.adligo.org', true, true),
-new Project('fab_core.ts.adligo.org', true), new Project('fab_core_tests.ts.adligo.org', true, true),
-new Project('fab.ts.adligo.org', true), new Project('fab_tests.ts.adligo.org', true, true)
+new Project('junit-xml-tests4j.ts.adligo.org', true), 
+new Project('junit-xml-tests4j_tests.ts.adligo.org', true, true),
+new Project('fab_core.ts.adligo.org'), // true), 
+new Project('fab_core_tests.ts.adligo.org'), // true, true),
+new Project('fab.ts.adligo.org'), //new Project('fab.ts.adligo.org', true), 
+new Project('fab_tests.ts.adligo.org') //true, true)
 ];
 
 module.exports = [Project, projects];
