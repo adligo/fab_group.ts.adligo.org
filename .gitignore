@@ -28,12 +28,27 @@ replay_pid*
 /node_modules/
 
 #sub projects
-/cli.ts.adligo.ortg
+/cli.ts.adligo.org
+/cli_tests.ts.adligo.org
+/depot
 /fab.ts.adligo.org
+/fab_tests.ts.adligo.org
 /fab_core.ts.adligo.org
+/fab_core_tests.ts.adligo.org
 /fab_dts_poc.ts.adligo.org
 /fab_group.ts.adligo.org
 /junitXml.tests4j.ts.adligo.org
+/i_cli.ts.adligo.org
+/i_fab_core.ts.adligo.org
 /i_io.ts.adligo.org
-/i_fab.ts.adligo.org
-/tests4j.ts.adligo.org
+/i_log2.ts.adligo.org
+/i_obj.ts.adligo.org
+/i_strings.ts.adligo.org
+/i_tests4ts.ts.adligo.org
+/junit-xml-tests4j.ts.adligo.org
+/junit-xml-tests4j_tests.ts.adligo.org
+/log2.ts.adligo.org
+/log2_tests.ts.adligo.org
+/tests4ts.ts.adligo.org
+/tests4ts_tests.ts.adligo.org
+/.classpath

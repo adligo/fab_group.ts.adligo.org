@@ -15,9 +15,13 @@ echo nodejs is `node -v`
 echo npm is `npm -v`
 
 export COMMON_NODE_MODULES=/var/jenkins_home/workspace/fab_group_deps.ts.adligo.org/fab_group_deps.ts.adligo.org/node_modules
+export CLI_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
+export LOG2_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
+export FAB_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export TESTS4TS_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export JUNIT_XML_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export SLINK_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
+
 
 echo $BUILD_NUMBER
 pwd
@@ -30,7 +34,7 @@ export USHELL=/usr/bin/bash
 npm run git-clone
 npm run setup
 npm run build
+npm run tests
 
-
-# Then Publish JUnit test result report with ;
+## then publish JUnit reports
 $BUILD_NUMBER/fab_group.ts.adligo.org/depot/test-results/*.xml
