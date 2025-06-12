@@ -23,26 +23,32 @@ if (IS_WIN) {
 function out(cmd, spawnSyncReturns, options) {
   var dir = options.cwd;
   if (dir == undefined) {
-	dir = '.';
+    dir = '.';
   }
   console.log('ran: ' + cmd + ' in ' + dir);
   if (options == undefined) {
-	console.log('with options: undefined');
+    console.log('with options: undefined');
   } else {
-	console.log('with options: ' + JSON.stringify(options));
+    console.log('with options: ' + JSON.stringify(options));
   }
-  
+
   console.log('\tand the spawnSyncReturns had;');
-  if (spawnSyncReturns.error != undefined) {
-	Error.captureStackTrace(spawnSyncReturns.error);
-    console.log('\tError: ' + spawnSyncReturns.error.message);
-	console.log('\tCause: ' + spawnSyncReturns.cause);
-  }  
+
   if (spawnSyncReturns.stderr != undefined) {
     console.log('\tStderr: ' + spawnSyncReturns.stderr);
   }
   if (spawnSyncReturns.stdout != undefined) {
     console.log('\tStdout: ' + spawnSyncReturns.stdout);
+  }
+  if (spawnSyncReturns.error) {
+    console.log('\tError: ' + spawnSyncReturns.error.message);
+    if (spawnSyncReturns.error.stack) {
+      console.log('\tStack: ' + spawnSyncReturns.error.stack);
+    }
+  }
+  if (spawnSyncReturns.status !== 0 && spawnSyncReturns.status !== null) {
+    console.log('\tExit Code: ' + spawnSyncReturns.status);
+    process.exit(spawnSyncReturns.status); // Propagate failure from child process
   }
 }
 
@@ -57,32 +63,32 @@ function out(cmd, spawnSyncReturns, options) {
 function runWith(cmd, args, options) {
   var cc = cmd;
   if (args != undefined) {
-    for (var i=0; i < args.length; i++) {
+    for (var i = 0; i < args.length; i++) {
       cc = cc + ' ' + args[i];
     }
   }
   //Execute fork to GitBash from GitBash
   if (options == undefined) {
-	options = new Object();
+    options = new Object();
 
-	var sh = process.env.SHELL;
-	if (sh != undefined) {
-		options.shell = process.env.SHELL
-	}
-	console.log('New options, running with shell is ' + options.shell)
+    var sh = process.env.SHELL;
+    if (sh != undefined) {
+      options.shell = process.env.SHELL
+    }
+    console.log('New options, running with shell is ' + options.shell)
   } else {
-	var sh = process.env.SHELL;
-	if (sh != undefined) {
-		options.shell = process.env.SHELL
-	}
-	console.log('Running with shell is ' + options.shell)
+    var sh = process.env.SHELL;
+    if (sh != undefined) {
+      options.shell = process.env.SHELL
+    }
+    console.log('Running with shell is ' + options.shell)
   }
-  
+
   if (args == undefined) {
-	out(cc, spawnSync(cmd, [], options), options);
+    out(cc, spawnSync(cmd, [], options), options);
   } else {
-  	out(cc, spawnSync(cmd, args, options), options);
-  } 
+    out(cc, spawnSync(cmd, args, options), options);
+  }
 }
 
 function run3(cmd, args, options) {

@@ -19,11 +19,10 @@ const [getOpts] = require('./getOpts.cjs');
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
-//run('pwd',[], getOpts('log2.ts.adligo.org'})
-
-
+run2('pwd',[]);
 for (var i=0; i < projects.length; i++) {
-	let project = projects[i];
-  console.log('setup.cjs running slink on project ' + JSON.stringify(project));
-	run3('slink',[], getOpts(project.getName()));
+    let project = projects[i];
+    if (project.hasTests()) {
+        run3('npm', ['run', 'tests'], getOpts(project.getName()));
+    }
 }

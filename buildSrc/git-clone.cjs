@@ -1,10 +1,7 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
 const [Project, projects] = require('./projects.cjs');
-const [getOpts] = require('./getOpts.cjs');
+const fs = require("fs");
 /**
- * This must be run from the root (aka ..) directory.
- * 
- * 
   * Copyright 2025 Adligo Inc / Scott Morgan
   *
   * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,11 +16,25 @@ const [getOpts] = require('./getOpts.cjs');
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
-//run('pwd',[], getOpts('log2.ts.adligo.org'})
-
+var base =  'https://github.com/';
+var args = []
+if (process.argv != undefined) {
+	args = process.argv;
+}
+console.log('Base is ' + base + ' checking cli arguments; \n' + args);
+for (var i=0; i < args.length; i++) {
+  let arg = args[i];
+  console.log('With argument ' + arg);
+  if (arg == '--ssh') {
+    base = 'git@github.com:'
+  }
+}
 
 for (var i=0; i < projects.length; i++) {
 	let project = projects[i];
-  console.log('setup.cjs running slink on project ' + JSON.stringify(project));
-	run3('slink',[], getOpts(project.getName()));
+  if (fs.existsSync(project.getName())) {
+    console.log(project.getName() + ' appears to already have been cloned')
+  } else {
+    run2('git',['clone',base + 'adligo/' + project.getName() + '.git']);
+  }
 }

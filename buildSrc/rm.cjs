@@ -1,10 +1,6 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
-const [Project, projects] = require('./projects.cjs');
-const [getOpts] = require('./getOpts.cjs');
+const [projects] = require('./projects.cjs');
 /**
- * This must be run from the root (aka ..) directory.
- * 
- * 
   * Copyright 2025 Adligo Inc / Scott Morgan
   *
   * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,11 +15,8 @@ const [getOpts] = require('./getOpts.cjs');
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
-//run('pwd',[], getOpts('log2.ts.adligo.org'})
-
-
+ 
 for (var i=0; i < projects.length; i++) {
 	let project = projects[i];
-  console.log('setup.cjs running slink on project ' + JSON.stringify(project));
-	run3('slink',[], getOpts(project.getName()));
+	run2('rm',['-fr',project.getName()]);
 }
