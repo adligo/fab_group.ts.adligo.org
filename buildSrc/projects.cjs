@@ -44,13 +44,13 @@ new Project('type-guards.ts.adligo.org',true),
 new Project('cli.ts.adligo.org'), // true),
 new Project('log2.ts.adligo.org', true),
 //build tests4ts before any testing library
-new Project('tests4ts.ts.adligo.org', true, true), 
+new Project('tests4ts.ts.adligo.org', true), 
 //build the JUnit xml generator before any of the testing libraries
 new Project('junit-xml-tests4j.ts.adligo.org', true), 
 new Project('type-guards_tests.ts.adligo.org', true, true), 
 new Project('cli_tests.ts.adligo.org'), // true),
 new Project('log2_tests.ts.adligo.org', true, true),// true),
-new Project('tests4ts_tests.ts.adligo.org'), //, true, true
+new Project('tests4ts_tests.ts.adligo.org', true, true), //, true, true
 new Project('junit-xml-tests4j_tests.ts.adligo.org', true, true),
 new Project('fab_core.ts.adligo.org'), // true), 
 new Project('fab_core_tests.ts.adligo.org'), // true, true),
