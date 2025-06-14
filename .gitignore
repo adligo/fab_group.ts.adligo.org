@@ -51,4 +51,6 @@ replay_pid*
 /log2_tests.ts.adligo.org
 /tests4ts.ts.adligo.org
 /tests4ts_tests.ts.adligo.org
+/type-guards.ts.adligo.org
+/type-guards_tests.ts.adligo.org
 /.classpath

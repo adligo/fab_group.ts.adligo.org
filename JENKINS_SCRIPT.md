@@ -18,6 +18,7 @@ export COMMON_NODE_MODULES=/var/jenkins_home/workspace/fab_group_deps.ts.adligo.
 export CLI_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export LOG2_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export FAB_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
+export OBJ_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export TESTS4TS_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export JUNIT_XML_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export SLINK_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
@@ -35,6 +36,3 @@ npm run git-clone
 npm run setup
 npm run build
 npm run tests
-
-## then publish JUnit reports
-$BUILD_NUMBER/fab_group.ts.adligo.org/depot/test-results/*.xml
