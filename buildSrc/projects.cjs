@@ -44,7 +44,7 @@ new Project('type-guards.ts.adligo.org',true),
 new Project('cli.ts.adligo.org'), // true),
 new Project('log2.ts.adligo.org', true),
 //build tests4ts before any testing library
-new Project('tests4ts.ts.adligo.org', true), 
+new Project('tests4ts.ts.adligo.org', true, true), 
 //build the JUnit xml generator before any of the testing libraries
 new Project('junit-xml-tests4j.ts.adligo.org', true), 
 new Project('type-guards_tests.ts.adligo.org', true, true), 
