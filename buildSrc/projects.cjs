@@ -35,6 +35,7 @@ class Project {
 
 }
 projects = [new Project('i_obj.ts.adligo.org', true), new Project('i_strings.ts.adligo.org', true), new Project('i_io.ts.adligo.org', true),
+new Project('i_tests4ts_types.ts.adligo.org', true),
 new Project('i_tests4ts.ts.adligo.org', true),new Project('i_log2.ts.adligo.org', true),
 new Project('i_cli.ts.adligo.org', true),new Project('i_fab_core.ts.adligo.org', true),
 // end of interface projects
