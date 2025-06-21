@@ -36,7 +36,7 @@ function getOpts(dir) {
 for (var i = 0; i < projects.length; i++) {
   let project = projects[i];
   console.log('setup.cjs running slink on project ' + JSON.stringify(project));
-  run3('slink', ['-r'], getOpts(project.getName()));
+  run3('slink -r -d', [], getOpts(project.getName()));
 }
 
 module.exports = [getOpts];

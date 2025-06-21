@@ -1,5 +1,5 @@
-const [run1, run2, run3] = require('./runFuns.cjs');
-const [Project, projects] = require('./projects.cjs');
+const runWith = require('./runFunsNew.cjs');
+const projects = require('./projects.cjs');
 const fs = require("fs");
 /**
   * Copyright 2025 Adligo Inc / Scott Morgan
@@ -35,6 +35,6 @@ for (var i=0; i < projects.length; i++) {
   if (fs.existsSync(project.getName())) {
     console.log(project.getName() + ' appears to already have been cloned')
   } else {
-    run2('git',['clone',base + 'adligo/' + project.getName() + '.git']);
+    runWith('git',['clone',base + 'adligo/' + project.getName() + '.git']);
   }
 }

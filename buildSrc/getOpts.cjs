@@ -31,4 +31,4 @@ function getOpts(dir) {
 	return obj;
 }
 
-module.exports = [getOpts];
+module.exports = getOpts;

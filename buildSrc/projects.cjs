@@ -59,4 +59,4 @@ new Project('fab.ts.adligo.org'), //new Project('fab.ts.adligo.org', true),
 new Project('fab_tests.ts.adligo.org') //true, true)
 ];
 
-module.exports = [Project, projects];
+module.exports = projects;
