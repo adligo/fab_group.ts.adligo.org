@@ -87,7 +87,17 @@ function runWith(cmd, args, options) {
   if (args == undefined) {
     out(cc, spawnSync(cmd, [], options), options);
   } else {
-    out(cc, spawnSync(cmd, args, options), options);
+    // fix to 
+    // [DEP0190] DeprecationWarning: Passing args to a child process with 
+    // shell option true can lead to security vulnerabilities, as the arguments 
+    // are not escaped, only concatenated.
+    let na = args.join(' ');
+    if (na.length >= 1) {
+      out(cc, spawnSync(cmd + ' ' + na, [], options), options);  
+    } else {
+      out(cc, spawnSync(cmd, [], options), options);  
+    }
+    
   }
 }
 

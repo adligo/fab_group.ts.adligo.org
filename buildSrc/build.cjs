@@ -19,7 +19,7 @@ const getOpts = require('./getOpts.cjs');
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
-runWith('pwd', []);
+runWith('pwd');
 for (var i = 0; i < projects.length; i++) {
   let project = projects[i];
   if (project.isBuildable()) {
