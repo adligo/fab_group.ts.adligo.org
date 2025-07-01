@@ -91,12 +91,11 @@ function runWith(cmd, args, options) {
     // [DEP0190] DeprecationWarning: Passing args to a child process with 
     // shell option true can lead to security vulnerabilities, as the arguments 
     // are not escaped, only concatenated.
-    let na = args.join(' ');
-    if (na.length >= 1) {
-      out(cc, spawnSync(cmd + ' ' + na, [], options), options);  
-    } else {
-      out(cc, spawnSync(cmd, [], options), options);  
-    }
+    //
+    // https://github.com/nodejs/help/issues/5063
+    // https://github.com/nodejs/help/issues/5072
+    //
+    out(cc, spawnSync(cmd, args, options), options);  
     
   }
 }
